@@ -186,8 +186,7 @@ See Microscopy with viewer:
 ### Diagnosis
 
 
-```{comment}
-asis, echo = (language == "TR")
+```{asis, echo = (language == "TR")}
 
 
 ::: {.callout-tip collapse="true" appearance="default" icon="true"}
@@ -201,8 +200,7 @@ anjiosarkom, dalak, karaciğer
 ```
 
 
-```{comment}
-asis, echo = (language == "EN")
+```{asis, echo = (language == "EN")}
 
 
 ::: {.callout-tip collapse="true" appearance="default" icon="true"}
