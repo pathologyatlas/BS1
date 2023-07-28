@@ -1,3 +1,32 @@
+---
+description: |
+    kolleksiyon, patoloji, atlas, pathology, whole slide image
+date: last-modified
+categories: [kolleksiyon]
+page-layout: full
+bibliography: references.bib
+---
+
+```{r bs, echo=FALSE, include=TRUE}
+
+source("./R/language.R")
+output_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+```
+
+```{asis, echo = (language == "TR")}
+
+**Bu sayfadaki vakalar Doç. Dr. Burcu Saka'nın kolleksiyonundan alınmıştır.**
+
+```
+
+```{asis, echo = (language == "EN")}
+
+**These cases are from the collections of Burcu Saka MD.**
+
+```
+
+
 ```{r language BS1, echo=FALSE, include=TRUE}
 source("./R/language.R")
 output_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
@@ -177,7 +206,7 @@ asis, echo = (language == "EN")
 
 
 ::: {.callout-tip collapse="true" appearance="default" icon="true"}
-### Tanı için tıklayın
+### Click for Diagnosis
 
 angiosarcoma, spleen, liver
 
