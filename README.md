@@ -1,114 +1,173 @@
-# template
-
-
-
-**template for pathology atlas repositories**
-
-
-
-
-> see [make-html-WSI](https://github.com/pathologyatlas/make-html-WSI) for more information and [TODO](https://github.com/pathologyatlas/TODO) to add cases
-
-
-
-
-> do not forget to activate github pages for the new repository
-
-
-
-
-```zsh
-
-vips dzsave HE.svs HE
-
-```
-
-
-
-
-```{r language template, echo=FALSE, include=TRUE}
-
+```{r language BS1, echo=FALSE, include=TRUE}
 source("./R/language.R")
-
+output_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 ```
+
+
+```{asis anjiosarkom, dalak, karaciğer , echo = (language == "TR")}
+## anjiosarkom, dalak, karaciğer {#sec-BS1 }
+```
+
+
+```{asis angiosarcoma, spleen, liver , echo = (language == "EN")}
+## angiosarcoma, spleen, liver {#sec-BS1 }
+```
+
+
+
+
+
+
+```{r BS1 screenshot HE1, eval=TRUE, include=FALSE}
+if (!file.exists("./screenshots/BS1-HE1_screenshot.png")) {
+webshot2::webshot(
+  url = "https://images.patolojiatlasi.com/BS1/HE1.html",
+  file = "./screenshots/BS1-HE1_screenshot.png"
+)
+}
+```
+
+
+
+
+
+
+```{r BS1 screenshot HE2, eval=TRUE, include=FALSE}
+if (!file.exists("./screenshots/BS1-HE2_screenshot.png")) {
+webshot2::webshot(
+  url = "https://images.patolojiatlasi.com/BS1/HE2.html",
+  file = "./screenshots/BS1-HE2_screenshot.png"
+)
+}
+```
+
+
+
+
+
+::::: panel-tabset
+
+
+### WSI - Link
+
+
+
 
 
 
 
 ```{asis, echo = (language == "TR")}
 
-## TemplateTR
+**anjiosarkom, dalak, karaciğer**
 
+
+[![Tam Ekran Görmek İçin Resmi Tıklayın](./screenshots/BS1-HE1_screenshot.png){width="25%"}](https://images.patolojiatlasi.com/BS1/HE1.html) [Tam Ekran Görmek İçin Resmi Tıklayın](https://images.patolojiatlasi.com/BS1/HE1.html)
 ```
-
-
-
 
 ```{asis, echo = (language == "EN")}
 
-## TemplateEN
+**angiosarcoma, spleen, liver**
+
+[![Click for Full Screen WSI](./screenshots/BS1-HE1_screenshot.png){width="25%"}](https://images.patolojiatlasi.com/BS1/HE1.html) [Click for Full Screen WSI](https://images.patolojiatlasi.com/BS1/HE1.html)
 
 ```
+
+
 
 
 
 
 ```{asis, echo = (language == "TR")}
 
-**templateTR**
+**anjiosarkom, dalak, karaciğer**
 
 
-[https://images.patolojiatlasi.com/template/HE.html](https://images.patolojiatlasi.com/template/HE.html)
+[![Tam Ekran Görmek İçin Resmi Tıklayın](./screenshots/BS1-HE2_screenshot.png){width="25%"}](https://images.patolojiatlasi.com/BS1/HE2.html) [Tam Ekran Görmek İçin Resmi Tıklayın](https://images.patolojiatlasi.com/BS1/HE2.html)
+```
 
-Mikroskopik görüntüleri inceleyin:
+```{asis, echo = (language == "EN")}
 
-<iframe src="https://images.patolojiatlasi.com/template/HE.html" style="height:400px;width:100%;" data-external="1"></iframe>
+**angiosarcoma, spleen, liver**
+
+[![Click for Full Screen WSI](./screenshots/BS1-HE2_screenshot.png){width="25%"}](https://images.patolojiatlasi.com/BS1/HE2.html) [Click for Full Screen WSI](https://images.patolojiatlasi.com/BS1/HE2.html)
 
 ```
+
+
+
+
+
+### WSI
+
+
+
+
+
+
+
+
+```{asis, echo = ((language=="TR") & (output_type=="html"))}
+Mikroskopik görüntüleri inceleyin:
+
+<iframe src="https://images.patolojiatlasi.com/BS1/HE1.html" style="height:600px;width:100%;" data-external="1"></iframe>
+
+```
+
+
+
+
+
+```{asis, echo = ((language == "EN") & (output_type=="html"))}
+
+See Microscopy with viewer:
+
+<iframe src="https://images.patolojiatlasi.com/BS1/HE1.html" style="height:600px;width:100%;" data-external="1"></iframe>
+
+```
+
+
+
+
+
+
+
+```{asis, echo = ((language=="TR") & (output_type=="html"))}
+Mikroskopik görüntüleri inceleyin:
+
+<iframe src="https://images.patolojiatlasi.com/BS1/HE2.html" style="height:600px;width:100%;" data-external="1"></iframe>
+
+```
+
+
+
+
+
+```{asis, echo = ((language == "EN") & (output_type=="html"))}
+
+See Microscopy with viewer:
+
+<iframe src="https://images.patolojiatlasi.com/BS1/HE2.html" style="height:600px;width:100%;" data-external="1"></iframe>
+
+```
+
+
+
+
+
+### Diagnosis
+
 
 ```{comment}
 asis, echo = (language == "TR")
 
 
+::: {.callout-tip collapse="true" appearance="default" icon="true"}
+### Tanı için tıklayın
 
-<button id="tani-case-template-btn">Tanıyı Göster</button>
-<div id="answer-template" style="display: none;">templateTR</div>
+anjiosarkom, dalak, karaciğer
 
-<script>
-  const showAnswer-templateBtn = document.getElementById('tani-case-template-btn');
-  const answer-template = document.getElementById('answer-template');
+:::
 
-  showAnswer-templateBtn.addEventListener('click', () => {
-    if (answer-template.style.display === 'none') {
-      answer-template.style.display = 'block';
-      showAnswer-templateBtn.textContent = 'Tanıyı Gizle';
-    } else {
-      answer-template.style.display = 'none';
-      showAnswer-templateBtn.textContent = 'Tanıyı Göster';
-    }
-  });
-</script>
-
-
-
-{{< video https://www.youtube.com/embed/ >}}
-
-
-
-```
-
-
-
-```{asis, echo = (language == "EN")}
-
-**templateEN**
-
-
-[https://images.patolojiatlasi.com/template/HE.html](https://images.patolojiatlasi.com/template/HE.html)
-
-See Microscopy with viewer: 
-
-<iframe src="https://images.patolojiatlasi.com/template/HE.html" style="height:400px;width:100%;" data-external="1"></iframe>
 
 ```
 
@@ -116,27 +175,24 @@ See Microscopy with viewer:
 ```{comment}
 asis, echo = (language == "EN")
 
-<button id="dx-case-template-btn">Show the Diagnosis</button>
-<div id="answer-template" style="display: none;">templateEN</div>
 
-<script>
-  const showAnswer-templateBtn = document.getElementById('dx-case-template-btn');
-  const answer-template = document.getElementById('answer-template');
+::: {.callout-tip collapse="true" appearance="default" icon="true"}
+### Tanı için tıklayın
 
-  showAnswer-templateBtn.addEventListener('click', () => {
-    if (answer-template.style.display === 'none') {
-      answer-template.style.display = 'block';
-      showAnswer-templateBtn.textContent = 'Hide the Diagnosis';
-    } else {
-      answer-template.style.display = 'none';
-      showAnswer-templateBtn.textContent = 'Show the Diagnosis';
-    }
-  });
-</script>
+angiosarcoma, spleen, liver
 
-
-{{< video https://www.youtube.com/embed/ >}}
-
-
+:::
 
 ```
+
+
+
+
+
+
+
+
+
+:::::
+
+<hr>
